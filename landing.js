@@ -12,17 +12,7 @@ async function getProducts() {
     }
 }
 function displayProducts(data){
-    let Fashioncontainer = document.getElementById('fashioncontainer')
-    let Accessoriescontainer=document.getElementById('accessoriescontainer')
-    let Bookscontainer=document.getElementById('bookscontainer')
-    let Gadgetscontainer=document.getElementById('gadgetscontainer')
-    let Toyscontainer=document.getElementById('toyscontainer')
-    let Homeluxecontainer=document.getElementById('homeluxecontainer')
-    let Grocerycontainer=document.getElementById('grocerycontainer')
-    let Mobilescontainer=document.getElementById('mobilescontainer')
-    let Beautycontainer=document.getElementById('beautycontainer')
-    let Handbagcontainer=document.getElementById('handbagscontainer')
-    let Footwearcontainer=document.getElementById('footwearcontainer')
+    let prodcutsContainers = document.getElementById('prodcutsContainers');
      
     data.forEach(prodObj => {
         let itemcontainer=document.createElement('div')
@@ -37,44 +27,11 @@ function displayProducts(data){
         deatilsContainer.className='detailsContainer'
         deatilsContainer.innerHTML = `
             <h3 class='productTitle'>${prodObj.title}</h3>
-            <p class='productPrice'>Price: $${prodObj.price}</p>
+            <p class='productPrice'>Price: ${prodObj.price}₹</p>
             <button class= 'buynow' onclick = 'buynow(${prodObj.id})'>BUY NOW</button>
             `
         itemcontainer.appendChild(deatilsContainer);
-
-        if(prodObj.category==='FASHION'){
-            Fashioncontainer.appendChild(itemcontainer)
-        }
-        else if(prodObj.category==='ACCESSORIES'){
-            Accessoriescontainer.appendChild(itemcontainer)
-        }
-        else if(prodObj.category==='BOOKS'){
-            Bookscontainer.appendChild(itemcontainer)
-        }
-        else if(prodObj.category==='GADGETS'){
-            Gadgetscontainer.appendChild(itemcontainer)
-        }
-        else if(prodObj.category==='TOYS'){
-            Toyscontainer.appendChild(itemcontainer)
-        }
-        else if(prodObj.category==='HOMELUXE'){
-            Homeluxecontainer.appendChild(itemcontainer)
-        }
-        else if(prodObj.category==='GROCERY'){
-            Grocerycontainer.appendChild(itemcontainer)
-        }
-        else if(prodObj.category==='MOBILES'){
-            Mobilescontainer.appendChild(itemcontainer)
-        }
-        else if(prodObj.category==='BEAUTY & MAKEUP'){
-            Beautycontainer.appendChild(itemcontainer)
-        }
-        else if(prodObj.category==='HANDBAGS'){
-            Handbagcontainer.appendChild(itemcontainer)
-        }
-        else if(prodObj.category==='FOOTWEAR'){
-            Footwearcontainer.appendChild(itemcontainer)
-        }
+        prodcutsContainers.appendChild(itemcontainer);
         
 })
 }
