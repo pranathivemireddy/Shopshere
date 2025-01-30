@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="img-container">
+        <img src="../Landing Page/images/login1.jpg" alt="" name="Welcome">
+        <div class="overlay-text">Login to Avail Offers</div>
+        </div>
+        <form>
+            <input type="text" placeholder="Username" pattern="[A-Za-z0-9]{8,16}" title="Username length should be minimum 8 and maximum 16" required>
+            <input type="password" placeholder="Password" pattern="(?=.*[A-Z])(?=.*\d)(?=.*@).{8,}" title="Password must be at least 8 characters, include one uppercase letter, one number, and the '@' symbol" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="btn-container">
+            <button onclick="location.href='./login.html'">Forgot Password</button>
+            <button onclick="location.href='./account.html'">Create Account</button>
+    </div>
+    </div>
+    <script src="./account.js" ></script>
+</body>
+</html>

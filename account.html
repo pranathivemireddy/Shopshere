@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Account</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        color: #fff;
+      }
+
+      .img-container {
+        position: relative;
+        width: 400px;
+        height: auto;
+    }
+    .img-container img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+    .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        color: #333;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+
+      .form-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+      }
+
+      .form-container input {
+        width: 90%;
+        padding: 13px;
+        margin: 10px 0;
+        border: 1px solid black;
+        border-radius: 10px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.8);
+        font-size: 1rem;
+        transition: transform 0.3s;
+      }
+
+      .form-container input:focus {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .form-container button {
+        background: linear-gradient(135deg, #ef63bc, #c11c79);
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .form-container button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="img-container">
+        <img src="../Landing Page/images/login1.jpg" alt="">
+        <div class="overlay-text">SigUp to Avail Offers</div>
+      </div>
+      <form>
+        <input type="text" placeholder="Name" pattern="[A-Za-z0-9]{8,16}" />
+        <input
+          type="email"
+          placeholder="Email"
+          pattern="[a-z\d.]+@[a-z0-9]+\.[a-z{2,}"
+          required
+        />
+        <input type="text" placeholder="Number" pattern="\d{10}" required />
+        <input
+          type="password"
+          placeholder="Password"
+          pattern="(?=.*[A-Z])(?=.*\d)(?=.*@).{8,}"
+          required
+        />
+        <button type="submit">Create Account</button>
+      </form>
+      <span>Already a customer<a href="./login.html">Login</a></span>
+    </div>
+  </body>
+</html>
