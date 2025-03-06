@@ -4,6 +4,7 @@ body {
     font-family: 'Arial', sans-serif;
     background: #f9f9f9;
     padding: 0;
+    scrollbar-width: none;
 }
 
 /* ===== HEADER STYLES ===== */
@@ -102,79 +103,269 @@ body {
 }
 
 /* ===== PRODUCTS SECTION ===== */
+/* Styling for the main category section */
 .main {
-    max-width: 1200px;
-    margin: auto;
     text-align: center;
-    padding-top: 20px;
+    margin: 20px;
 }
 
-h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Product Categories */
+/* Container holding all category items */
 #prodcutsContainers {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
-    gap: 20px;
-    padding: 20px;
-    justify-content: center;
-}
-/* Category Titles */
-.containerTitle {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: block;
-    color: #555;
-}
-
-/* ===== PRODUCT CARDS ===== */
-.itemContainer {
-    border: 2px solid black;
-    border-radius: 10px;
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 15px; /* Space between items */
     padding: 15px;
-    text-align: center;
-    background-color: white;
-}
-.itemContainer:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox scrollbar */
+    scrollbar-color: #888 #f1f1f1;
 }
 
-/* Image Styling */
-.imageContainer {
+/* Styling the scrollbar (for Webkit browsers) */
+#prodcutsContainers::-webkit-scrollbar {
+    height: 8px;
+}
+
+#prodcutsContainers::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#prodcutsContainers::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Individual category item container */
+.itemContainer {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 0 0 auto; /* Prevent shrinking */
+    width: 200px; /* Set fixed width */
+}
+
+/* Image container inside category */
+.imageContainer img {
     width: 100%;
-    height: 50%;
+    height: 150px;
+    object-fit: cover; /* Ensure images fit properly */
+    border-radius: 8px;
+}
+
+/* Category name styling */
+.categoryName {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8px;
+}
+/* Ensure images look good on hover */
+.imageContainer img:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+/* Electronics Section */
+#electronics {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Scrollbar Styling */
+#electronics::-webkit-scrollbar {
+    height: none;
+}
+
+#electronics::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+#electronics::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 5px;
+}
+
+/* Individual Electronics Product Containers */
+.electronicsitemContainer {
+    display: inline-block;
+    width: 200px; /* Set a fixed width for scrolling */
+    margin: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.electronicsitemContainer:hover {
+    transform: scale(1.05);
+}
+
+/* Image Container for Each Product */
+.electronicscontainer {
+    width: 100%;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
 }
 
-.imageContainer img {
+/* Product Images */
+.electronicscontainer img {
     width: 100%;
-    height: 150px;
-    object-fit: contain; /* Ensures image fits without distortion */
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Product Details */
-.detailsContainer {
-    margin-top: 10px;
+.electronicscontainer img:hover {
+    transform: scale(1.1);
 }
-.productTitle {
-    font-size: 1rem;
-    font-weight: bold;
+/*Jewellery container*/
+#jewellery {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping */
 }
 
-.productPrice {
-    font-size: 0.9rem;
-    color: green;
+/* Scrollbar Styling */
+#jewellery::-webkit-scrollbar {
+    height: 8px;
 }
 
+#jewellery::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+#jewellery::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 5px;
+}
+
+/* Individual Electronics Product Containers */
+.jewelleryitemContainer {
+    display: inline-block;
+    width: 200px; /* Set a fixed width for scrolling */
+    margin: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.jewelleryitemContainer:hover {
+    transform: scale(1.05);
+}
+
+/* Image Container for Each Product */
+.jewellerycontainer {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* Product Images */
+.jewellerycontainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.jewellerycontainer img:hover {
+    transform: scale(1.1);
+}
+/*Grocery*/
+#grocery {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Scrollbar Styling */
+#grocery::-webkit-scrollbar {
+    height: 8px;
+}
+
+#grocery::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+#grocery::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 5px;
+}
+
+/* Individual Electronics Product Containers */
+.groceryitemContainer {
+    display: inline-block;
+    width: 200px; /* Set a fixed width for scrolling */
+    margin: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.groceryitemContainer:hover {
+    transform: scale(1.05);
+}
+
+/* Image Container for Each Product */
+.grocerycontainer {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* Product Images */
+.grocerycontainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.grocerycontainer img:hover {
+    transform: scale(1.1);
+}
 /* Buy Now Button */
 .buynow {
     background-color: #ff6f61;
