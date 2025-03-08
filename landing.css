@@ -172,7 +172,7 @@ body {
     padding: 20px;
     background: #f8f8f8;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(13, 12, 12, 0.1);
     overflow-x: auto; /* Enables horizontal scrolling */
     white-space: nowrap; /* Prevents wrapping */
 }
@@ -212,8 +212,9 @@ body {
 /* Image Container for Each Product */
 .electronicscontainer {
     width: 100%;
-    height: 180px;
+    height: 275px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -279,8 +280,9 @@ body {
 /* Image Container for Each Product */
 .jewellerycontainer {
     width: 100%;
-    height: 180px;
+    height: 250px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -298,6 +300,9 @@ body {
 
 .jewellerycontainer img:hover {
     transform: scale(1.1);
+}
+#view{
+    border-color: none;
 }
 /*Grocery*/
 #grocery {
@@ -346,8 +351,9 @@ body {
 /* Image Container for Each Product */
 .grocerycontainer {
     width: 100%;
-    height: 180px;
+    height: 270px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -366,6 +372,8 @@ body {
 .grocerycontainer img:hover {
     transform: scale(1.1);
 }
+
+
 /* Buy Now Button */
 .buynow {
     background-color: #ff6f61;

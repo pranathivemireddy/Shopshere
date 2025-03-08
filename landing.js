@@ -1,3 +1,4 @@
+//All Categories
 async function getCategories() {
     try {
         let response = await fetch('https://solid-diligent-iberis.glitch.me/categories');
@@ -5,7 +6,7 @@ async function getCategories() {
             throw new Error('THE PAGE YOU ARE LOOKING IS UNAVAILABLE');
         }
         let result = await response.json();
-        console.log("API Data Fetched:", result); // Debugging
+        // console.log("API Data Fetched:", result); // Debugging
         displayCategories(result);
     } catch (error) {
         console.error("Fetch Error:", error);
@@ -37,7 +38,7 @@ async function electronics(){
             throw new Error('THE PAGE YOU ARE LOOKING IS UNAVAILABLE');
         }
         let result = await response.json();
-        console.log("API Data Fetched:", result); // Debugging
+        // console.log("API Data Fetched:", result); // Debugging
         displayelectronics(result);
     } catch (error) {
         console.error("Fetch Error:", error);
@@ -60,11 +61,25 @@ function displayelectronics(data) {
         let electronicsimageContainer = document.createElement('div');
         electronicsimageContainer.className = 'electronicscontainer';
 
-        electronicsimageContainer.innerHTML = `<img src='${Obj.product_photo}'>`;
+        // electronicsimageContainer.innerHTML = `<img src='${Obj.product_photo}'>
+        //                                        <button class="view">View Product</button>`;
 
-        electronicsitemcontainer.appendChild(electronicsimageContainer);
+
+        let imageElement= document.createElement('img');
+        imageElement.src = `${Obj.product_photo}`;
+
+        let buttonElement = document.createElement('button');
+        buttonElement.textContent = 'View Product';
+        buttonElement.addEventListener('click',viewProduct(Obj))
+        
+        electronicsitemcontainer.append(imageElement,buttonElement);
         electronicsproducts.appendChild(electronicsitemcontainer);
     });
+}
+function viewProduct(obj){
+    console.log('Hello',obj);
+    // localStorage.setItem('Product',JSON.stringify(obj));
+    // window.location.href = './product.html'
 }
 //Jewellery
 async function jewellery(){
@@ -74,7 +89,7 @@ async function jewellery(){
             throw new Error('THE PAGE YOU ARE LOOKING IS UNAVAILABLE');
         }
         let result = await response.json();
-        console.log("API Data Fetched:", result); // Debugging
+        // console.log("API Data Fetched:", result); // Debugging
         displayjewellery(result);
     } catch (error) {
         console.error("Fetch Error:", error);
@@ -97,12 +112,15 @@ function displayjewellery(data) {
         let jewelleryimageContainer = document.createElement('div');
         jewelleryimageContainer.className = 'jewellerycontainer';
 
-        jewelleryimageContainer.innerHTML = `<img src='${Obj.product_photo}'>`;
-
+        jewelleryimageContainer.innerHTML = `<img src='${Obj.product_photo}'>
+                                            <button class="view" onclick = viewProduct(${JSON.stringify(Obj)})>View Product</button>`
         jewelleryitemcontainer.appendChild(jewelleryimageContainer);
         jewelleryproducts.appendChild(jewelleryitemcontainer);
     });
 }
+
+
+
 //Grocery
 async function grocery(){
     try {
@@ -111,7 +129,7 @@ async function grocery(){
             throw new Error('THE PAGE YOU ARE LOOKING IS UNAVAILABLE');
         }
         let result = await response.json();
-        console.log("API Data Fetched:", result); // Debugging
+        // console.log("API Data Fetched:", result); // Debugging
         displaygrocery(result);
     } catch (error) {
         console.error("Fetch Error:", error);
@@ -134,7 +152,8 @@ function displaygrocery(data) {
         let groceryimageContainer = document.createElement('div');
         groceryimageContainer.className = 'grocerycontainer';
 
-        groceryimageContainer.innerHTML = `<img src='${Obj.product_photo}'>`;
+        groceryimageContainer.innerHTML = `<img src='${Obj.product_photo}'>
+                                          <button class="view">View Product</button> `;
 
         groceryitemcontainer.appendChild(groceryimageContainer);
         groceryproducts.appendChild(groceryitemcontainer);
