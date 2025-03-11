@@ -4,7 +4,6 @@ body {
     font-family: 'Arial', sans-serif;
     background: #f9f9f9;
     padding: 0;
-    scrollbar-width: none;
 }
 
 /* ===== HEADER STYLES ===== */
@@ -112,11 +111,11 @@ body {
 /* Container holding all category items */
 #prodcutsContainers {
     display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 15px; /* Space between items */
+    overflow-x: auto; 
+    gap: 15px; 
     padding: 15px;
     white-space: nowrap;
-    scrollbar-width: none; /* Firefox scrollbar */
+    scrollbar-width: none;
     scrollbar-color: #888 #f1f1f1;
 }
 
@@ -170,11 +169,16 @@ body {
     width: 100%;
     margin-top: 30px;
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
     background: #f8f8f8;
+    scrollbar-width: no;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(13, 12, 12, 0.1);
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap; /* Prevents wrapping */
+    overflow-x: auto;
+    white-space: nowrap; 
+    scrollbar-width: none;
 }
 
 /* Scrollbar Styling */
@@ -192,57 +196,20 @@ body {
     border-radius: 5px;
 }
 
-/* Individual Electronics Product Containers */
-.electronicsitemContainer {
-    display: inline-block;
-    width: 200px; /* Set a fixed width for scrolling */
-    margin: 10px;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.electronicsitemContainer:hover {
-    transform: scale(1.05);
-}
-
-/* Image Container for Each Product */
-.electronicscontainer {
-    width: 100%;
-    height: 275px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 10px;
-    background: #fff;
-}
-
-/* Product Images */
-.electronicscontainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease-in-out;
-}
-
-.electronicscontainer img:hover {
-    transform: scale(1.1);
-}
 /*Jewellery container*/
 #jewellery {
     width: 100%;
     margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
     padding: 20px;
     background: #f8f8f8;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap; /* Prevents wrapping */
+    overflow-x: auto; 
+    white-space: nowrap;
+    scrollbar-width: none;
 }
 
 /* Scrollbar Styling */
@@ -260,47 +227,6 @@ body {
     border-radius: 5px;
 }
 
-/* Individual Electronics Product Containers */
-.jewelleryitemContainer {
-    display: inline-block;
-    width: 200px; /* Set a fixed width for scrolling */
-    margin: 10px;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.jewelleryitemContainer:hover {
-    transform: scale(1.05);
-}
-
-/* Image Container for Each Product */
-.jewellerycontainer {
-    width: 100%;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 10px;
-    background: #fff;
-}
-
-/* Product Images */
-.jewellerycontainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease-in-out;
-}
-
-.jewellerycontainer img:hover {
-    transform: scale(1.1);
-}
 #view{
     border-color: none;
 }
@@ -308,12 +234,15 @@ body {
 #grocery {
     width: 100%;
     margin-top: 30px;
+    display: flex;
+    flex-direction: row;
     padding: 20px;
     background: #f8f8f8;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap; /* Prevents wrapping */
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
 }
 
 /* Scrollbar Styling */
@@ -331,36 +260,6 @@ body {
     border-radius: 5px;
 }
 
-/* Individual Electronics Product Containers */
-.groceryitemContainer {
-    display: inline-block;
-    width: 200px; /* Set a fixed width for scrolling */
-    margin: 10px;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.groceryitemContainer:hover {
-    transform: scale(1.05);
-}
-
-/* Image Container for Each Product */
-.grocerycontainer {
-    width: 100%;
-    height: 270px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 10px;
-    background: #fff;
-}
-
 /* Product Images */
 .grocerycontainer img {
     width: 100%;
@@ -374,19 +273,60 @@ body {
 }
 
 
-/* Buy Now Button */
-.buynow {
+/* Update for Electronics, Jewellery, and Grocery Item Containers */
+.electronicsitemContainer, .jewelleryitemContainer, .groceryitemContainer {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 350px;
+    /* height: 400px; */
+    gap: 30px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.electronicscontainer, .jewellerycontainer, .grocerycontainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.electronicscontainer img, .jewellerycontainer img, .grocerycontainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.electronicscontainer img:hover, .jewellerycontainer img:hover, .grocerycontainer img:hover {
+    transform: scale(1.1);
+}
+
+/* View Product Button */
+.viewproduct {
     background-color: #ff6f61;
     color: white;
     border: none;
-    padding: 10px 15px;
-    font-size: 1rem;
+    padding: 8px 12px;
+    font-size: 0.9rem;
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s;
+    margin-top: 10px; /* Ensure spacing between image and button */
 }
 
-.buynow:hover {
+.viewproduct:hover {
     background-color: #e65c55;
 }
 

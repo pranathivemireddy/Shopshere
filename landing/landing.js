@@ -70,17 +70,15 @@ function displayelectronics(data) {
 
         let buttonElement = document.createElement('button');
         buttonElement.textContent = 'View Product';
-        buttonElement.addEventListener('click',viewProduct(Obj))
+        buttonElement.onclick = ()=>{
+            viewProduct(Obj)
+        }
         
         electronicsitemcontainer.append(imageElement,buttonElement);
         electronicsproducts.appendChild(electronicsitemcontainer);
     });
 }
-function viewProduct(obj){
-    console.log('Hello',obj);
-    // localStorage.setItem('Product',JSON.stringify(obj));
-    // window.location.href = './product.html'
-}
+
 //Jewellery
 async function jewellery(){
     try {
@@ -112,9 +110,16 @@ function displayjewellery(data) {
         let jewelleryimageContainer = document.createElement('div');
         jewelleryimageContainer.className = 'jewellerycontainer';
 
-        jewelleryimageContainer.innerHTML = `<img src='${Obj.product_photo}'>
-                                            <button class="view" onclick = viewProduct(${JSON.stringify(Obj)})>View Product</button>`
-        jewelleryitemcontainer.appendChild(jewelleryimageContainer);
+        let imageElement= document.createElement('img');
+        imageElement.src = `${Obj.product_photo}`;
+
+        let buttonElement = document.createElement('button');
+        buttonElement.textContent = 'View Product';
+        buttonElement.onclick = ()=>{
+            viewProduct(Obj)
+        }
+        
+        jewelleryitemcontainer.append(imageElement,buttonElement);
         jewelleryproducts.appendChild(jewelleryitemcontainer);
     });
 }
@@ -152,15 +157,22 @@ function displaygrocery(data) {
         let groceryimageContainer = document.createElement('div');
         groceryimageContainer.className = 'grocerycontainer';
 
-        groceryimageContainer.innerHTML = `<img src='${Obj.product_photo}'>
-                                          <button class="view">View Product</button> `;
+        let imageElement= document.createElement('img');
+        imageElement.src = `${Obj.product_photo}`;
 
-        groceryitemcontainer.appendChild(groceryimageContainer);
+        let buttonElement = document.createElement('button');
+        buttonElement.textContent = 'View Product';
+        buttonElement.onclick = ()=>{
+            viewProduct(Obj)
+        }
+        
+        groceryitemcontainer.append(imageElement,buttonElement);
         groceryproducts.appendChild(groceryitemcontainer);
     });
 }
-function buynow(){
-    window.open('login.html', '_blank');
+function viewProduct(obj){
+    console.log('Hello',obj);
+    localStorage.setItem('Product',JSON.stringify(obj));
+    window.location.href = '/Landing Page/ProductDetails/product.html'
 }
-    
 document.addEventListener("DOMContentLoaded",()=>{getCategories();electronics(),jewellery(),grocery()})
