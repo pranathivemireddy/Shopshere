@@ -474,157 +474,105 @@ body {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 1110px){
+/* Responsive Media Queries for landing page */
+
+/* Styles for screens less than 576px */
+@media(min-width:320px) and (max-width: 575.98px) {
+    #container {
+        padding: 5px 5px;
+        width: 576px;
+    }
+    #shopName {
+        font-size: 18px;
+    }
+    #collection {
+        gap: 5px;
+    }
+    .home, .cart,#input,.search {
+        display: none;
+    }
+    .search{
+        display: none !important;
+    }
+    .body-container{
+        margin-top: 50px;
+    }
+    #Footercontainer {
+        padding: 10px 10px;
+        font-size: 10px;
+        gap: 20px;
+    }
+    h3{
+        font-size: 1rem;
+    }
+}
+
+/* Styles for screens greater than or equal to 576px */
+@media (min-width: 575.98px) and (max-width: 767.98px) {
+    #shopName {
+        font-size: 20px;
+    }
+    #input {
+        width: 16em;
+        height: 1.8em;
+    }
+    #collection {
+        gap: 8px;
+    }
+    #Footercontainer {
+        padding: 15px 15px;
+        font-size: 12px;
+        gap: 30px;
+    }
+}
+
+/* Styles for screens greater than or equal to 768px */
+@media (min-width: 768px) {
+    #container {
+        padding: 10px 15px;
+    }
+    #shopName {
+        font-size: 25px;
+    }
+    #input {
+        width: 20em;
+        height: 2.5em;
+    }
+    #collection {
+        gap: 15px;
+    }
+}
+
+/* Styles for screens greater than or equal to 992px */
+@media (min-width: 992px) {
+    #container {
+        padding: 15px 20px;
+    }
     #shopName {
         font-size: 30px;
-        font-weight: bold;
     }
-    #search {
-        display: flex;
-        align-items: center;
-        gap: 10px; 
-    }
-
     #input {
-        width: 32em;  /* Smaller width */
-        height: 2.5em; /* Adjusted height */
-        padding: 5px 15px; /* Balanced padding */
-        background-color: rgb(241, 241, 241);
-        border: none;
-        border-radius: 5px;
-        font-size: 14px; /* Reduce font size */
+        width: 25em;
+        height: 3em;
     }
-
-    .fas {
-        display: none;
-    }
-
-    #input::placeholder {
-        font-size: 12px; /* Smaller placeholder text */
-    }
-    #user {
-        display: flex;
-        gap: 30px;
-        align-items: center;
-    }
-    #Footercontainer h3:hover,#Footercontainer p:hover {
-    color: lightslategray;
-    cursor: pointer;
-}
-}
-
-/* Tablets (max-width: 1024px) */
-@media (max-width: 1024px){
-    #shopName {
-        font-size: 25px;
-        font-weight: bold;
-    }
-    #search {
-        display: flex;
-        align-items: center;
-        gap: 10px; /* Reduce space between input & icon */
-    }
-
-    #input {
-        width: 28em;  
-        height: 2.5em;
-        padding: 5px 18px; 
-        background-color: rgb(241, 241, 241);
-        border: none;
-        border-radius: 5px;
-        font-size: 14px; /* Reduce font size */
-    }
-
-    .search {
-        display: none;
-    }
-
-    #input::placeholder {
-        font-size: 12px; 
-    }
-    #user {
-        display: flex;
-        gap: 30px;
-        align-items: center;
-    }
-    #Footercontainer {
-        width: 100%;
-        max-width: 1200px; /* Limits width to avoid excessive right margin */
-        background-color: rgb(29, 29, 29);
-        color: white;
-        letter-spacing: 1px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        text-transform: uppercase;
-        font-size: 15px;
-        padding: 30px 50px; /* Reduced padding to balance space */
-        box-sizing: border-box;
-        gap: 40px;
-        margin: 0 auto; /* Centers the footer */
-    }
-    
-    #Footercontainer h3:hover,
-    #Footercontainer p:hover {
-        color: lightslategray;
-        cursor: pointer;
+    #collection {
+        gap: 20px;
     }
 }
 
-
-/* Mobile Devices (max-width: 768px) */
-@media (max-width: 768px) {
-    #container{
-        width: 768px;
+/* Styles for screens greater than or equal to 1200px */
+@media (min-width: 1200px) {
+    #container {
+        padding: 15px 40px;
     }
     #shopName {
-        font-size: 25px;
-        font-weight: bold;
+        font-size: 40px;
     }
-    #search {
-        display:none;
-    }
-
     #input {
-        width: 10em;  /* Smaller width */
-        height: 1.2em; /* Adjusted height */
-        padding: 3px 10px; /* Balanced padding */
-        background-color: rgb(241, 241, 241);
-        border: none;
-        border-radius: 5px;
-        font-size: 8px; /* Reduce font size */
+        width: 36em;
+        height: 3em;
     }
-
-    .fas {
-        display: none;
+    #collection {
+        gap: 30px;
     }
-
-    #input::placeholder {
-        font-size: 8px; /* Smaller placeholder text */
-    }
-    /*Footer*/
-    #Footercontainer {
-        display: flex;  /* Use flexbox for centering */
-        flex-direction: column;
-        align-items: center;  /* Center horizontally */
-        text-align: center;  /* Ensure text is centered */
-        padding: 30px 50px;  /* Reduce padding for better spacing */
-    }
-    
-    /* Footer Bottom */
-    #credit {
-        width: 100%;
-        margin: auto;
-        padding: 20px 0;
-        text-align: center;
-        background-color: rgb(29, 29, 29);
-        color: white;
-        font-size: 11px;
-        letter-spacing: 1px;
-    }
-    #Footercontainer h3:hover,
-#Footercontainer p:hover {
-    color: lightslategray;
-    cursor: pointer;
-}
- 
 }

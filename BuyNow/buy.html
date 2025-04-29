@@ -1,0 +1,42 @@
+<!-- buynow.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="./buy.css" />
+  </head>
+  <body>
+    <h1><center>Checkout Page</center></h1>
+    <div class="buynow-container" id="productDetails">
+      <!-- Product details will be injected here -->
+    </div>
+
+    <script>
+      const product = JSON.parse(localStorage.getItem("buyNowItem"));
+      const container = document.getElementById("productDetails");
+      if (product) {
+        container.innerHTML = `
+                <img src="${product.product_photo}" alt="${product.product_title}" class="product-image">
+                <h2>${product.product_title}</h2>
+                <p>Price: ${product.product_price}</p>
+                <p>Rating: ${product.product_star_rating}</p>
+                <p>Delivery: ${product.product_delivery_info}</p>
+                <div class="buynow-actions">
+        <button onclick="proceed()">Proceed</button>
+        <button onclick="cancel()">Cancel</button>
+    </div>
+            `;
+      }
+
+      function cancel() {
+        window.location.href = "../AddtoCart/cart.html";
+      }
+
+      function proceed() {
+        alert("Order is being Packed!");
+        window.location.href = "../index.html";
+      }
+    </script>
+  </body>
+</html>

@@ -91,7 +91,30 @@ body {
     padding: 5px 8px;
     font-size: 14px;
 }
+.user-dialog {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    min-width: 150px;
+    z-index: 1000;
+}
 
+.user-dialog a {
+    display: block;
+    padding: 8px;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.user-dialog a:hover {
+    background-color: #f1f1f1;
+}
 /* Grid container */
 #mainContainer {
     display: grid;
@@ -160,14 +183,14 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
-#productButton:first-of-type {
+.addToCartBtn {
     padding: 8px 12px;
     background-color: rgb(255, 187, 0);
     color:white;
     font-size: 12px;
     cursor: pointer;
 }
-#productButton:last-of-type {
+.buyNowBtn {
     background-color: #f18706;
     text-align: center;
     color: white;
@@ -262,4 +285,152 @@ body {
 /* Hide loader after full animation */
 .hidden {
     animation: fadeOut 1s ease-in-out forwards;
+}
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px){
+    #container{
+        width: 1024px;
+    }
+    #shopName {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    #search {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Reduce space between input & icon */
+    }
+
+    #input {
+        width: 28em;  
+        height: 2.5em;
+        padding: 5px 18px; 
+        background-color: rgb(241, 241, 241);
+        border: none;
+        border-radius: 5px;
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .search {
+        display: none;
+    }
+
+    #input::placeholder {
+        font-size: 12px; 
+    }
+    #user {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+}
+
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .container{
+        width: 768px;
+    }
+    .home,.cart{
+        display: none;
+    }
+    .fas{
+        position: absolute;
+        left: 320px;
+        top: 25px;
+    }
+    #userIcon{
+        display: block;
+        margin-right: 30px;
+    }
+    #input {
+        width: 15rem;  
+        height: 1.2em; 
+        padding: 10px 10px;
+        background-color: rgb(241, 241, 241);
+        border: none;
+        border-radius: 5px;
+        font-size: 8px; /* Reduce font size */
+    }
+    .search {
+        display: none !important; 
+    }
+    #mainContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+        width: 80vw;
+        margin-top: 20px;
+    } 
+ 
+}
+@media (max-width: 425px) {
+    #container{
+        width: 425px;
+    }
+    #shopName {
+        margin-right: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #search,.home,.cart{
+        display:none;
+    }
+    #userIcon{
+        display: block;
+        margin-right: 40px;
+    }
+    #mainContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        width: 80vw;
+        margin-top: 20px;
+    } 
+}
+@media (max-width:375px)  {   
+    #shopName {
+        margin-right: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #search,.home,.cart{
+        display:none;
+    }
+    #userIcon{
+        display: block;
+        margin-right: 35px;
+    }
+    #mainContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 4rem;
+        width: 80vw;
+        margin-top: 20px;
+    }
+}
+@media (max-width:320px)  {
+    #container{
+        width: 320px;
+    }
+    #shopName {
+        margin-right: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #search,.home,.cart{
+        display:none;
+    }
+    #userIcon{
+        display: block;
+        margin-right: 35px;
+    }
+    #mainContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 4rem;
+        width: 80vw;
+        margin-top: 20px;
+    }
 }

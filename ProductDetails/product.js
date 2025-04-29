@@ -135,3 +135,18 @@ function addToCart(product) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
 }
+//Dailog-Box
+document.getElementById("userIcon").addEventListener("click", function(event) {
+    let userDialog = document.getElementById("userDialog");
+    userDialog.style.display = (userDialog.style.display === "block") ? "none" : "block";
+  
+    event.stopPropagation();
+  });
+  
+  // Close dialog when clicking outside
+  document.addEventListener("click", function(event) {
+    let userDialog = document.getElementById("userDialog");
+    if (userDialog.style.display === "block" && !event.target.closest("#user")) {
+        userDialog.style.display = "none";
+    }
+  });

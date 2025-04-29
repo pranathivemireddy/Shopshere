@@ -1,0 +1,57 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin: 0;
+}
+
+/* Box container for Buy Now content */
+.buynow-container {
+    background: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    margin: auto;
+    border-radius: 8px;
+    width: 80vw;
+    /* height: 70vh; */
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Product image styling */
+.product-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Styling for buttons */
+.buynow-actions button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    width: 120px;
+}
+
+/* Cancel button style */
+.buynow-actions button:nth-child(1) {
+    background-color:  #4CAF50;
+    color: white;
+}
+
+/* Proceed button style */
+.buynow-actions button:nth-child(2) {
+    background-color:#ec3722;
+    color: white;
+}
