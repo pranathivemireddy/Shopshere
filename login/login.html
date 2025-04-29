@@ -46,7 +46,7 @@
           <button type="submit" onclick="toggleForms()">Create Account</button>
         </form>
         <div id="skiplogin">
-            <a href="../landing/landing.html">Skip Login</a>
+            <a href="../index.html">Skip Login</a>
         </div>
         <script type="module">
             import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
@@ -168,7 +168,7 @@
                         console.log(user)
                         localStorage.setItem('LoginDetails', JSON.stringify(user));
                         setTimeout(() => {
-                            window.location.href = '../landing/landing.html'
+                            window.location.href = '../index.html'
                         }, 1500)
                     }).catch((error) => {
                         const errorCode = error.code;
