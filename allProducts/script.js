@@ -150,6 +150,14 @@ window.addEventListener("load", function () {
     setTimeout(() => (loader.style.display = "none"), 500); 
   }, 1000); 
 });
+function buyNowFromCart(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (cart[index]) {
+    localStorage.setItem("buyNowItem", JSON.stringify(cart[index]));
+    window.location.href = "../BuyNow/buy.html"; 
+  }
+}
+
 //Dailog-Box
 document.getElementById("userIcon").addEventListener("click", function(event) {
   let userDialog = document.getElementById("userDialog");
