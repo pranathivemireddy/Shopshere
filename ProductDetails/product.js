@@ -87,10 +87,14 @@ buttonContainer.className = 'buttonContainer';
 
 let addToCartBtn = document.createElement('button');
 addToCartBtn.innerText = "Add to Cart";
-addToCartBtn.addEventListener("click", function(){ addToCart(objdata)}); // ✅ Add to Cart Functionality
+addToCartBtn.addEventListener("click", function(){ addToCart(objdata)}); 
 
 let buyNowBtn = document.createElement('button');
 buyNowBtn.innerText = "Buy Now";
+buyNowBtn.addEventListener("click", function () {
+    localStorage.setItem("buyNowItem", JSON.stringify(objdata));
+    window.location.href = "../BuyNow/buy.html";
+})
 
 buttonContainer.appendChild(addToCartBtn);
 buttonContainer.appendChild(buyNowBtn);

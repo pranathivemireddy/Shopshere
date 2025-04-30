@@ -8,7 +8,7 @@ async function getData() {
 
 function displayData(data) {
   let mainContainer = document.getElementById("mainContainer");
-  mainContainer.innerHTML = ""; // Clear previous content
+  mainContainer.innerHTML = ""; 
 
   data.forEach((product) => {
     let itemContainer = document.createElement("div");
@@ -42,8 +42,10 @@ function displayData(data) {
     let buyNowButton = document.createElement("button");
     buyNowButton.className = "buyNowBtn";
     buyNowButton.textContent = "BUY NOW";
-    buyNowButton.addEventListener("click", () => buyNow(product));
-
+    buyNowButton.addEventListener('click',function(){
+      localStorage.setItem("buyNowItem", JSON.stringify(product));
+      window.location.href = "../BuyNow/buy.html";
+    })
     btnContainer.appendChild(addToCartButton);
     btnContainer.appendChild(buyNowButton);
 
@@ -55,13 +57,13 @@ function displayData(data) {
 // ✅ Function to Show Toast Notification
 function showToast(message) {
   let toast = document.createElement("div");
-  toast.className = "toast show"; // Ensure 'show' class is applied immediately
+  toast.className = "toast show"; 
   toast.innerText = message;
   document.body.appendChild(toast);
 
   setTimeout(() => {
     toast.classList.remove("show");
-    setTimeout(() => toast.remove(), 100); // Ensure it is removed after animation
+    setTimeout(() => toast.remove(), 100); 
   }, 2000);
 }
 
@@ -73,17 +75,17 @@ function addToCart(product) {
   );
 
   if (existingItem) {
-    existingItem.quantity += 1; // Increase quantity if already in cart
+    existingItem.quantity += 1; 
     showToast(`${product.product_title} quantity updated!`);
   } else {
-    product.quantity = 1; // Set initial quantity
+    product.quantity = 1; 
     cart.push(product);
-    showToast(`${product.product_title} added to cart!`); // ✅ Show toast for new item
+    showToast(`${product.product_title} added to cart!`); item
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
   window.location.href = "../AddtoCart/cart.html";
-  displayCartItems(); // Refresh cart display
+  displayCartItems(); 
 }
 
 // ✅ Display Cart Items
@@ -138,8 +140,6 @@ function updateQuantity(index, change) {
   localStorage.setItem("cart", JSON.stringify(cart));
   displayCartItems();
 }
-
-// ✅ Call displayCartItems when cart.html loads
 if (window.location.pathname.includes("cart.html")) {
   document.addEventListener("DOMContentLoaded", displayCartItems);
 }
